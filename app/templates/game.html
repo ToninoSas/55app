@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/86beb53b09.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/game.css') }}">
+</head>
+
+<body>
+<div id="game_data" style="display: none;">{{ data | tojson }}</div>
+<div id="lobby">
+    <div>
+        <div>image</div>
+        <h1>55</h1>
+        <p>Giocatori: <span id="n_players_now"></span>/<span id="max_players"></span></p>
+        Status: <span id="status">in attesa di altri giocatori</span>
+    </div>
+    <div id="dati">
+        <span>lista di giocatori entrati</span>
+        <ul id="players_list"></ul>
+        <p id="error_tag"></p>
+    </div>
+
+</div>
+<div id="game">
+    <div id="appbar">
+        <div id="settings-icon"><i class="fa-solid fa-gear"></i></div>
+    </div>
+    <div id="game-table">
+        <div id="top"></div>
+        <div id="center"></div>
+        <div id="bottom"></div>
+    </div>
+
+</div>
+<div id="end_game"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/hand.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/card.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/Table.js') }}"></script>
+
+</body>
+
+</html>
